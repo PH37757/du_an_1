@@ -1,0 +1,20 @@
+<div class="container text-center">
+    <h1 class="my-5">Sản phẩm yêu thích</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <?php foreach($list_products as $value) {
+            extract($value);?>
+            <div class="col">
+                <form method="post" action="add_to_cart.php">
+                    <input type="hidden" name="product_id" value="<?=$id?>">
+                    <div><img class="border-4 mt-3" style="width:100%; height:382px " src="../../img/<?=$img?>" alt=""></div>
+                    <div>
+                        <p><?=$name_pro?></p>
+                        <p>Tees & Polo shirts</p>
+                        <p><?=$price?> đ</p>
+                        <input onclick="confirm('Thêm vào giỏ hàng')" class="btn btn-success" type="submit" name="add_to_cart" value="ADD TO CART">
+                    </div>
+                </form>
+            </div>
+        <?php }?>
+    </div>
+</div>
